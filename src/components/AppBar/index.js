@@ -8,7 +8,7 @@ function AppBar(props) {
     const matches  = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
-            {matches? <AppBarMobile/> : <AppBarDesktop/>}
+            {matches? <AppBarMobile matches={matches}/> : <AppBarDesktop matches={matches}/>}
         </>
     );
 }
