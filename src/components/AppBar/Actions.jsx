@@ -5,50 +5,56 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {matches} from "@testing-library/jest-dom/dist/utils";
+import {Colors} from "../../styles/theme";
 
 function Actions({matches}) {
     const Component = matches ? ActionIconsContainerMobile : ActionIconsContainerDesktop;
     return (
         <Component>
-        <MyList type='row'>
-            <ListItemButton
-                sx={{
-                    justifyContent: 'center',
-                }}>
-                <ListItemIcon sx={{
-                    display: 'flex',
-                    justifyContent: 'center'
-                }}>
-                    <ShoppingCartIcon/>
-                </ListItemIcon>
-            </ListItemButton>
-            <Divider orientation="vertical" flexItem/>
-            <ListItemButton
-                sx={{
-                    justifyContent: 'center',
-                }}>
-                <ListItemIcon
+            <MyList type='row'>
+                <ListItemButton
                     sx={{
-                        display: 'flex',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
                     }}>
-                    <PersonIcon/>
-                </ListItemIcon>
-            </ListItemButton>
-            <Divider orientation="vertical" flexItem/>
-            <ListItemButton
-                sx={{
-                    justifyContent: 'center',
-                }}>
-                <ListItemIcon
+                    <ListItemIcon sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        color: matches && Colors.secondary
+                    }}>
+                        <ShoppingCartIcon/>
+                    </ListItemIcon>
+                </ListItemButton>
+                <Divider orientation="vertical" flexItem/>
+                <ListItemButton
                     sx={{
-                        display: 'flex',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
                     }}>
-                    <FavoriteIcon/>
-                </ListItemIcon>
-            </ListItemButton>
-        </MyList>
+                    <ListItemIcon
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            color: matches && Colors.secondary
+
+                        }}>
+                        <PersonIcon/>
+                    </ListItemIcon>
+                </ListItemButton>
+                <Divider orientation="vertical" flexItem/>
+                <ListItemButton
+                    sx={{
+                        justifyContent: 'center',
+                    }}>
+                    <ListItemIcon
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            color: matches && Colors.secondary
+
+                        }}>
+                        <FavoriteIcon/>
+                    </ListItemIcon>
+                </ListItemButton>
+            </MyList>
         </Component>
     );
 }
