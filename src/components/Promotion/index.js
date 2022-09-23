@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {MessageText, PromotionsContainer} from "../../styles/Promotions";
 import {Box, Slide} from "@mui/material";
 
@@ -10,6 +10,7 @@ const messages = [
 
 
 function Promotion() {
+    const containerRef = useRef();
     const [messageIndex, setMessageIndex] = useState(0)
     const [show, setShow] = useState(true)
 
@@ -38,8 +39,13 @@ function Promotion() {
     return (
         <PromotionsContainer>
             <Slide
+                container={containerRef.current}
                 direction={show ? 'left' : 'right'}
                 in={show}
+                timeout={{
+                    enter: 750,
+                    exit: 200
+                }}
             >
 
                 <Box display={'flex'} justifyContent='center' alignItems={'center'}>
