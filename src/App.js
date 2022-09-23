@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import theme from "./styles/theme";
 import AppBar from "./components/AppBar";
 import Banner from "./components/Banner";
+import Promotion from "./components/Promotion";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         >
             <AppBar/>
             <Banner/>
+            <Promotion/>
             {
                 /*
                 * AppBar
