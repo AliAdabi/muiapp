@@ -1,9 +1,9 @@
 import {styled} from "@mui/material/styles";
-import {Box} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import {Colors} from "../theme";
 
 
-export const PromtionsContainer = styled(Box)(({theme})=> ({
+export const PromotionsContainer = styled(Box)(({theme})=> ({
     [theme.breakpoints.up('md')]: {
         padding: '40px 0px 40px 0px',
     },
@@ -13,4 +13,14 @@ export const PromtionsContainer = styled(Box)(({theme})=> ({
     padding: '20px 0px 20px 0px',
     overflow: 'hidden',
     background: Colors.secondary
+}))
+
+
+export const MessageText = styled(Typography)(({theme}) => ({
+    fontFamily: '"Montez", "cursive"',
+    [theme.breakpoints.up('md')]: {
+        fontSize: '3rem',
+    },
+    color: Colors.white,
+    fontSize: '1.5rem'
 }))
